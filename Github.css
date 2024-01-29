@@ -1,0 +1,113 @@
+:root {
+  --color-white: #ffffff;
+  --color-dark1: #080808;
+  --color-dark2: #1c1c1c;
+  --color-dark3: #3d3d3d;
+  --color-dark4: #414040;
+  --color-dark5: #575757;
+  --color-purple: #e8ce0c;
+}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {
+  background-color: var(--color-dark1);
+}
+
+.imagem_logo {
+  width: 90px;
+}
+.header,
+.nav_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header {
+  background-color: var(--color-dark2);
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 1px 1px 1px var(--color-dark3);
+  height: 3.5em;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+.nav_header {
+  gap: 1em;
+  font-size: 16px;
+}
+.nav_header a {
+  color: var(--color-purple);
+  transition: 1s;
+  font-weight: bold;
+  text-decoration: none;
+}
+.nav_header a:hover {
+  background-color: #575757;
+  padding: 10px;
+  border-radius: 5px;
+}
+.btn_icon_header {
+  background-color: transparent;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  display: none;
+}
+form{
+  background-color: var(--color-white);
+  max-width: 500px;
+  width: 70%;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+form h3{
+  text-align: center;
+  color: var(--color-purple);
+  font-family: Arial, Helvetica, sans-serif;
+}
+form input[type=email],
+form input[type=password]{
+  width: 100%;
+  height: 45px;
+  border: 1px solid var(--color-dark2);
+  padding: 10px;
+  margin: 10px 0;
+  outline: 0px;
+}
+form input[type=submit]{
+  cursor: pointer;
+  color: var(--color-purple);
+  background-color: var(--color-dark3);
+  width: 50%;
+  height: 30px;
+  margin: 0 25%;
+  transition: 0.5s;
+}
+form input[type=submit]:hover{
+  background-color: var(--color-dark2);
+}
+@media screen and (max-width: 768px) {
+  .btn_icon_header {
+    display: block;
+  }
+  .nav_header {
+    position: absolute;
+    flex-direction: column;
+    top: 0;
+    background-color: var(--color-dark3);
+    height: 100%;
+    width: 35vw;
+    padding: 1em;
+    animation-duration: 1s;
+    margin-left: -100vw;
+  }
+}
+@keyframes showSidebar {
+  from {
+    margin-left: -100vw;
+  }
+  to {
+    margin-left: -10vw;
+  }
+}
